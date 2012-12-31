@@ -20,14 +20,23 @@ You need to make a few changes:
  /home/michael/wget/bin/wget -r --no-check-certificate --page-requisites -k -t 20 -T 15 --header='Host: topix.landrover.jlrext.com' --header='User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:15.0) Gecko/20100101 Firefox/15.0.1' --header='Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header='Accept-Language: en-us,en;q=0.5' --header='Accept-Encoding: ' --header='DNT: 1' --header='Connection: keep-alive' --header='Referer: https://topix.landrover.jlrext.com/topix/service/document/175405' --header='Cookie: LOCALE=en_GB; COUNTRY=US; JSESSIONID=85B4A5DBC70160D2D1DBF457E032D58D.prs72905' 'https://topix.landrover.jlrext.com/topix/service/procedure/175405/ODYSSEY/'$relPt1'/en_US?uid='$relPt2' --content-disposition -c
  
  o Use the rebuilt version of wget (unless you're not running into HTTPS problems).
+ 
  o Add -r to make it recursive to pull in files referenced by the web page.  Otherwise you don't get images.
+ 
  o Add --no-check-certificate  because the certificate from the LR web site does not match the web site name.
+ 
  o Add --page-requesites for reasons similar to -r.
+ 
  o Add -k to convert links within the web page so they reference local files.
+ 
  o Add -t for the number of retries.
+ 
  o Add -T for the time-out.  If you start seeing HTTPS failures, you'll need the wget patch mentioned above.
+ 
  o Remove the "gzip, deflate" option from the "Accept-Encoding" header, as this busts the recursive & page requisite options.
+ 
  o Replace G941389 with the variable $relPt1 pulled from 175405.html.
+ 
  o Replace G1379963 with the variable $relPt2 pulled from 175405.html. 
 
 Also please pay attention to any notes I've placed in the scripts.  At least one script required minor editing of the index HTML.
