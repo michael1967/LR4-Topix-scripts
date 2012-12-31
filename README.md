@@ -39,7 +39,7 @@ You need to make a few changes:
  
  o Replace G1379963 with the variable $relPt2 pulled from 175405.html. 
 
-Also please pay attention to any notes I've placed in the scripts.  At least one script required minor editing of the index HTML.
+Also please pay attention to any notes I've placed in the scripts, and pay attention to the wget command.  At least one script required minor editing of the index HTML.  Another required wget command modifcations slightly different from above.
 
 Scripts to edit the index from the Land Rover Topix manual site
 ---------------------------------------------------------------
