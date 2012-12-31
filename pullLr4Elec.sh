@@ -5,6 +5,8 @@
 # Replace 202262.htm as needed with your index file if it differs
 # Replace the wget commands (there are two) per the README.
 # Output will be stored within the local subdirectory as a collection of PDFs.
+# Note the difference in the wget command from the other scripts.  There is no recursiveness and
+# there is a single output file.
 
 found=0
 titleFound=0
